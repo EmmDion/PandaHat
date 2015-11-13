@@ -1,0 +1,9 @@
+ <?php
+
+	$server = "ix-trusty.cs.uoregon.edu";
+	$dbname ="panda_hat";
+	$user = "guest";
+	$pass = "guest";
+	$port="3022";
+
+	?>
