@@ -16,9 +16,15 @@
 <p>
 Enter a quiz tag and student id:
 
-<p>
+</p>
 
 <form action="Fetch.php" method="POST">
+
+<!--
+	This test interface assumes an instructor only wishes to see survey results for
+	one survey and one student at a time. The first assumption is probably true; the
+	second assumption is probably not.
+-->
 
 <input type="text" name="survey_tag"> <br>
 <input type="text" name="student_id"> <br>

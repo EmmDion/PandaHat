@@ -16,7 +16,7 @@
 <p>
 Enter student id and survey tag. Then give answers to the questions.
 
-<p>
+</p>
 
 <form action="Give.php" method="POST">
 
@@ -25,9 +25,25 @@ Enter student id and survey tag. Then give answers to the questions.
 
 <br>
 
+<!--
+	The actual survey submission interface will have questions next to each
+	response field. But, it might be an acceptable or good design decision to
+	separate the content of the question prompts from the number (and types?)
+	of expected responses. The Iter1 php code which accepts/stores survey data
+	need not know what the question prompts are.
+-->
+
 <input type="text" name="q000"> <br>
 <input type="text" name="q001"> <br>
 <input type="text" name="q002"> <br>
+
+
+<!--
+	In the Iter1 php code it is assumed that responses to questions 0 - 42 will be
+	accessible by _POST keys 'q000' - 'q042'. This is a temporary decision. But,
+	we will need some naming convention like this in order for ease of changing
+	the number of questions.
+-->
 
 <!--
 <input type="text" name="q003"> <br>
