@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!-- Main Page: This is the first page to open. It gives the user the ability to 
+say if they are a student or instructor and takes them to the corresponding page
+-->
+<html>
+	<head>
+		<Title> Panda Hat </Title>
+		<style type="text/css">
+
+		html{
+			background-image: url("http://www.dualimg.com/wp-content/wallpapers/20130103/uyx53yfhzsn448.jpg");
+		}
+
+		#button1{
+			position:absolute;
+			top:50%;
+			left: 45%;
+		}
+
+
+		#button2{
+			position:absolute;
+			top:50%;
+			left: 52%;
+		}
+
+
+		h1 {
+			position: absolute;
+			top:40%;
+			left:38%;
+
+		}
+
+
+		</style>
+	</head>
+
+	<body>
+
+		<div id="body">
+			<h1> Are you a Student or Instructor? </h1>
+
+			<div id="button1">
+				<!--Need to change these navigations so that they will work on web browsers
+				for everyone not just my computer-->
+				<form action="file:///C:/Users/Emmalie/Desktop/PandaHat.html">
+					<button type="Student">Student</button>
+				</form>
+			</div>
+			<div id="button2">
+				<form action="file:///C:/Users/Emmalie/Desktop/PandaHatIns.html">
+					<button type="Instructor">Instructor</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

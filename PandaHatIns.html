@@ -1,0 +1,51 @@
+<html>
+<!--Instructor Login Page: Must input username and password. again those will not be hard
+coded into program-->
+	<head>
+		<Title> Login </Title>
+		<style type="text/css">
+
+			html{
+				background-image: url("http://www.dualimg.com/wp-content/wallpapers/20130103/uyx53yfhzsn448.jpg");
+			}
+
+			h1 {
+				position: absolute;
+				top: 40%;
+				left: 45%;
+			}
+			#button {
+				position: absolute;
+				top: 50%;
+				left: 45%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1> Instructor Login </h1>
+
+		<form name="login">
+
+			<div id="button">
+				<input type="text" name="username" size="30">
+				<!-- <form action="file:///C:/Users/Lib-gsh/Desktop/PandaHatStuQuiz.html"> -->
+				<input type="text" name="password" size="30">
+				<br> </br>
+				<button type="Login" onclick="check(this.form)">Login</button>
+				<!-- </form> -->
+				<script language="javascript">
+				function check(form)
+				{
+					if(form.username.value == "Faulk" && form.password.value == "cis422")
+					{
+						window.open('file:///C:/Users/Emmalie/Desktop/PandaHatInsPage.html')
+					}
+					else{
+						alert("Error")
+					}
+				}
+				</script>
+			</div>
+		</form>
+	</body>
+</html>
