@@ -1,0 +1,54 @@
+<html>
+<!--Student Login Page: Student must input class code and then hit submit to go to
+the quiz -->
+	<head>
+		<Title> Login </Title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<style type="text/css">
+
+			html{
+				background-image: url("http://www.dualimg.com/wp-content/wallpapers/20130103/uyx53yfhzsn448.jpg");
+			}
+
+			h1 {
+				position: absolute;
+				top: 40%;
+				left: 45%;
+			}
+			#button {
+				position: absolute;
+				top: 50%;
+				left: 45%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1> Student Login </h1>
+
+		<form name="login">
+
+			
+			<div id="button">
+				<input type="password" name="code" size="30" class="textbox">
+				
+				<button type="Student" onclick="check(this.form)" class="button">Submit</button>
+				
+				<!--Need to change logic below: code will not be hardcoded but come from instructor-->
+				<script language="javascript">
+				function check(form)
+				{
+					
+					if(form.code.value == "7515")
+					{
+						window.open('file:///C:/Users/Emmalie/Desktop/PandaHatStuQuiz.html')
+					}
+					else{
+						alert("Error")
+					}
+				}
+				</script>
+			</div>
+		</form>
+	</body>
+</html>
