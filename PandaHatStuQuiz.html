@@ -1,245 +1,443 @@
-<!DOCTYPE html>
-<!--Student Quiz: currently this quiz is static on the page and is the same as the one
-we got at the beginning of the term-->
 <html>
-<head>
-	<Title> Student Quiz </Title>
+	<head>
+		<style type="text/css">
+			html{
+				background-image: url("http://www.dualimg.com/wp-content/wallpapers/20130103/uyx53yfhzsn448.jpg");
+			}
+			#title{
+				margin-left: 525px;
+			}
 
-	<style type="text/css">
+			#basicInfo {
+				font-size: 12px;
+				margin-left: 525px;
 
-		html{
-			background-image: url("http://www.dualimg.com/wp-content/wallpapers/20130103/uyx53yfhzsn448.jpg");
-		}
+			}
 
-
-
-		#title{
-			margin-left: 525px;
-		}
-
-		#basicInfo {
-			font-size: 12px;
-			margin-left: 525px;
-
-		}
-
-		#skills{
-			font-size: 12px;
-			margin-left: 525px;
-		}
-
-		#experience{
-			font-size: 12px;
-			margin-left: 525px;
-		}
-
-		#learning{
-			font-size: 12px;
-			margin-left: 525px;
-		}
-
-		#submit{
-			height: 20px;
-			width: 100px;
-			border-radius: 5px;
-			margin: auto;
-			text-align: center;
-		}
-
-		table{
-			margin-left: 0px;
-		}
-
-
-	</style>
-</head>
-
-<body>
-
-	<div id="title">
-		<h1> CIS 422/522: Team Formation Survey <h1>
-	</div>
-
-
-	<div id="basicInfo">
-
-		<p>
-			<form>
-				Name:
-				<input type="text" name="name">
-
-				I prefer to be called:
-				<input type="text" name="nickname">
-			</form>
-		</p>
-
-		<p>
-			<form>
-				Student ID #
-				<input type="text" name="ID">
-			</form>
-		</p>
-
-		<p>
-
-				CIS courses enrolled in this term
-				<input type="text" name="courses" size="2">
-				<input type="text" name="courses1" size="2">
-				<input type="text" name="courses2" size="2">
-				<input type="text" name="courses3" size="2">
-		</p>
-		
-		<p> 
-			Grades in CIS core courses (approximate): 
+			#skills{
+				font-size: 12px;
+				margin-left: 525px;
+			}
 			
-				</p><div class="form">
-					CIS 313
-					<input type="text" name="313" size="2" />
-					CIS 314
-					<input type="text" name="314" size="2" />
-					CIS 315
-					<input type="text" name="315" size="2" />
-					CIS 415
-					<input type="text" name="415" size="2" />
-					CIS 425
-					<input type="text" name="425" size="2" /></div>
+			#experience{
+				font-size: 12px;
+				margin-left: 525px;
+			}
 
+			#learning{
+				font-size: 12px;
+				margin-left: 525px;
+			}
+
+			#submit{
+				height: 20px;
+				width: 100px;
+				border-radius: 5px;
+				margin: auto;
+				text-align: center;
+			}
+
+			table{
+				margin-left: 0px;
+			}
+		
+		</style>
+
+
+	</head>
+	<body>
+
+	 
+		<div id="title">
+			<h1> CIS 422/522: Team Formation Survey </h1>
+		</div>
+		
+		
+		<div id="basicInfo">
+		
+			<p> 
+				<div class="form">
+					Name:
+					<input type="text" name="name" />
+					
+					I prefer to be called: 
+					<input type="text" name="nickname" />
+				</div>
+			</p>
+
+			
 			
 			<p> 
-				</p><div class="form">
+				<div class="form">
+					Student ID # 
+					<input type="text" name="ID" />
+				</div>
+
+			</p>
+			
+			<p> 
+				
+					CIS courses enrolled in this term
+					<input type="text" name="courses" size="2" />
+					<input type="text" name="courses1" size="2" />
+					<input type="text" name="courses2" size="2" />
+					<input type="text" name="courses3" size="2" />
+			</p>
+			
+			<p> 
+			Grades in CIS core courses (approximate): 
+			
+			</p>
+			<div class="form">
+					CIS 313
+					<select name="grade">
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="F">F</option>
+					</select>
+					CIS 314
+					<select name="grade">
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="F">F</option>
+					</select>
+					CIS 315
+					<select name="grade">
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="F">F</option>
+					</select>
+					CIS 415
+					<select name="grade">
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="F">F</option>
+					</select>
+					CIS 425
+					<select name="grade">
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="F">F</option>
+					</select>
+
+			</div>
+			<p> 
+				<div class="form">
 					All other 4xx courses completed: 
-					<input type="text" name="4xx" size="2" /><input type="text" name="4xx1" size="2" /><input type="text" name="4xx2" size="2" /><input type="text" name="4xx3" size="2" /><input type="text" name="4xx4" size="2" /><input type="text" name="4xx5" size="5" /></div>
+					<input type="text" name="4xx" size="2" />
+					<input type="text" name="4xx1" size="2" />
+					<input type="text" name="4xx2" size="2" />
+					<input type="text" name="4xx3" size="2" />
+					<input type="text" name="4xx4" size="2" />
+					<input type="text" name="4xx5" size="5" />
+				</div>
+			</p>
 
 			<p>
-			</p><p> 
-				</p><div class="form">
+			
+				<div class="form">
 					In what role(s) do you think you can best contribute to a team (e.g., programmer, tester, technical writer, manager)?
-					<br /><textarea cols="75" rows="3"></textarea></div>
-
+					<br />
+					<input type="checkbox" name="role" value="programmer"> Programmer<br>
+					<input type="checkbox" name="role" value="tester">Tester<br>
+					<input type="checkbox" name="role" value="technical_writer"> Technical Writer<br>
+					<input type="checkbox" name="role" value="manager"> Manager<br>
+				</div>
+			</p>
 			
 		
 		</div>
 		
 		<div id="skills">
 		
-			<!-- bold ignored --> Skills (rate from 0=none to 5=high proficiency) <p>
-				</p><div class="form">
-					Java: <input type="text" name="Java" size="2" />
-					C++: <input type="text" name="C++" size="2" />
-					C: <input type="text" name="C++" size="2" />
-					Python: <input type="text" name="Python" size="2" />
-					Android: <input type="text" name="Android" size="2" />
-					web design(HTML/XML): <input type="text" name="web" size="2" />
-					web programming(PHP, etc.): <input type="text" name="web1" size="2" /><br />
+			<!-- bold ignored --> Skills (rate from 0=none to 5=high proficiency) 
+				<div class="form">
+					Java: 
+					<select name="Java">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					C++: 
+					<select name="C++">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					C: 
+					<select name="C">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					Python: 
+					<select name="Python">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					Android: 
+					<select name="Android">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					web design(HTML/XML): 
+					<select name="webD">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					web programming(PHP, etc.): 
+					<select name="webP">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<br />
 					Other: <input type="text" name="C++" size="75" /></div>
 
-				<br /><table><tr><td> Problem solving </td>
+				<br />
+				<table>
+					<tr>
+						<td> Problem solving </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="PS">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						<td> Analytical thinking </td>
 						<td>
-							<div class="form">
-								<input type="text" size="2" /></div>
-
+							<div class="AT">
+								<select name="grade">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						<td> Thinking up new ideas </td>
 						<td>
-							<div class="form">
-								<input type="text" size="2" /></div>
-
+							<div class="TUNI">
+								<select name="grade">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
-					</tr><tr></tr><tr><td> Public Speaking </td>
+					</tr>
+					<tr>
+					</tr>
+					<tr>
+						<td> Public Speaking </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="PubS">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						<td> Planning/organizing </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="P/O">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						<td> Good with big picture </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="GWBP">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
-					</tr><tr></tr><tr><td> PowerPoint </td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td> PowerPoint </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="PP">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						<td> Team Building </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="TB">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						<td> Good with details </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="GWD">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
-					</tr><tr></tr><tr><td> Spoken English </td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td> Spoken English </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="SE">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						<td> Written English </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="WE">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						<td> Technical writing </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="TW">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
-					</tr><tr></tr><tr><td> Outgoing (5) Shy (1) </td>
+					</tr>
+				<tr></tr>
+					<tr>
+						<td> Outgoing (5) Shy (1) </td>
 						<td>
 							<div class="form">
-								<input type="text" size="2" /></div>
-
+								<select name="I/E">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
 						</td>
 						
-					</tr><tr></tr></table></div>
+					</tr>
+				<tr></tr>
+			</table>
+		</div>
 		
 		<div id="experience">
 		
-			<!-- bold ignored --> Professional Development Experience(if any) <p>
-				</p><div class="form">
+			<!-- bold ignored --> Professional Development Experience(if any) 
+				<div class="form">
 					<input type="text" name="experience" size="50" /></div>
-
+				</div>
 			
 		</div>
 		
 		<div id="learning">
 		
-			<p> briefly describe what you expect or want to learn in this class: </p><p>
-			<textarea cols="50" rows="5"></textarea></p></div>
+			<p> briefly describe what you expect or want to learn in this class: </p>
+			<p>
+				<textarea cols="50" rows="5" name="expectations"></textarea>
+			</p>
+		</div>
 		
 		<div id="submit">
 			<button type="submit">Submit</button>
 		</div>
-	</body>	
+	
+	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
