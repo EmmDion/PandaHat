@@ -51,7 +51,7 @@
 		<div id="title">
 			<h1> CIS 422/522: Team Formation Survey </h1>
 		</div>
-		
+		<form action="./php/Give.php" method="POST">  <!-- NEED BE FIXED by using JS-->
 		
 		<div id="basicInfo">
 		
@@ -226,7 +226,7 @@
 						<option value="5">5</option>
 					</select>
 					<br />
-					Other: <input type="text" name="q26" size="75" /></div>
+					Other: <input type="text" name="q026" size="75" /></div>
 
 				<br />
 				<table>
@@ -435,9 +435,17 @@
 			</p>
 		</div>
 		
-		<div id="submit">
+		<!--<div id="submit">
 			<button type="submit">Submit</button>
 		</div>
+		-->
+		
+
+		
+		<input type="submit" value="submit">
+		<input type="reset" value="erase">
+		</form>
+
 	
 	</body>
 </html>
