@@ -38,11 +38,22 @@ for ($i = 0; $i <= $numberOfQuestions; $i++)
     //DEBUG:
 	//DEBUG:
     $query = "INSERT INTO survey_results VALUE ('{$_POST['ID']}', 'survey_1', $i, '{$_POST[$paramName]}');";
+    $query2 = "INSERT INTO student_info VALUE ('{$_POST['name']}', '{$_POST['nickname']}','{$_POST['ID']}');";
     //DEBUG:
     // The mysqli way of querying the database.
-	if($stmt = $conn -> prepare($query))
+	if($stmt1 = $conn -> prepare($query))
 	{
-		$stmt -> execute();
+		$stmt1 -> execute();
+	    //DEBUG:
+	}
+	else
+	{
+	    //DEBUG:
+		echo "That didn't work out.";
+	}
+	if($stmt2 = $conn -> prepare($query2))
+	{
+		$stmt2 -> execute();
 	    //DEBUG:
 	}
 	else
