@@ -5,15 +5,156 @@ what he would like the page to look like-->
 
 	<head>
 		<Title> Instructor Site </Title>
+		<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 		<style type="text/css">
 			
 			html{
 				background-image: url("http://www.dualimg.com/wp-content/wallpapers/20130103/uyx53yfhzsn448.jpg");
 			}
 			
+			h2{
+				font-size: 78px;
+				margin-left: 100px;
+			}
+			
+			#tables{
+				/*background-color: #63A13C; */
+				padding-top: 50px;
+				padding-bottom: 50px;
+				padding-left: 50px;
+				width: 575px;
+				height: 350px;
+				border-radius: 10px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.button1{
+				margin-left: 800px;
+
+			}
+			.button2{
+				margin-left:390px;
+			}
+			#startDate{
+				border: none;
+				background-color: transparent;
+				
+			}
+			#endDate{
+				border: none;
+				background-color: transparent;
+				
+			}
+			#startDate1{
+				border: none;
+				background-color: transparent;
+			}
+			#endDate1{
+				border: none;
+				background-color: transparent;
+			}
+			input[disabled]{
+				color: black;
+			}
+			
+			
+			
 		</style>
 	</head>
 	<body>
-		<strong> Welcome </strong>
+		<h2>Welcome </h2>
+		<div id="button1" class="button1">
+			<button onclick="changeDate()">Change Start/End Date</button>	
+		</div>
+		<!--
+		<div id="button2" class="button2">
+			<button> Create New Survey </button>
+		</div>
+		-->
+		<div id="tables">
+			<div id="open">
+				<table border="1" cellpadding="10"> Open Surveys <br></br>
+					<tr> 
+						<td> Survey ID </td>
+						<td> Start Date </td>
+						<td> End Date</td>
+						<td> # of Submissions </td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td>CIS 422</td>
+						<td><input id="startDate"disabled size="7"></td>
+						<td><input id="endDate" disabled size="7"></td>
+						<td>22</td>
+						<td> <a href="teamCreate.html">Create Teams</a> </td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td> <a href="teamCreate.html"> Create Teams </a> </td>
+					</tr>
+				</table>	
+			</div>
+			<br></br>
+			<br></br>
+			
+			<div id="closed">
+				<table border="1" cellpadding="10"> Closed Surveys <br></br>
+					<tr>
+						<td> Survey ID </td>
+						<td> Start Date </td>
+						<td> End Date</td>
+						<td> # of Submissions </td>
+						<td>  </td>
+					</tr>
+					<tr>
+						<td>CIS 522</td>
+						<td><input id="startDate1" disabled size="7"></td>
+						<td><input id="endDate1" disabled size="7"></td>
+						<td>35</td>
+						<td> <a href = "teamCreate.html">Create Teams </a></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td> <a href="teamCreate.html"> Create Teams </a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<script>
+		
+		var x = document.createElement("BUTTON");
+		x.id = 'submit';
+		var y = document.createTextNode("Submit");
+		x.appendChild(y);
+		document.body.appendChild(x)
+		
+		
+		function changeDate()
+		{
+		
+			document.getElementById("endDate").disabled = false;
+			document.getElementById("startDate").disabled = false;
+			document.getElementById("endDate1").disabled = false;
+			document.getElementById("startDate1").disabled = false;
+			
+			document.getElementById("submit").addEventListener("click", submit);
+			document.getElementById("submit").addEventListener("click", submit);
+		}
+		function submit()
+		{
+			document.getElementById("endDate").disabled = true;
+			document.getElementById("startDate").disabled = true;
+			document.getElementById("endDate1").disabled = true;
+			document.getElementById("startDate1").disabled = true;
+			
+		}
+		</script>
 	</body>
 </html>
