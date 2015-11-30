@@ -38,9 +38,11 @@ for ($i = 0; $i <= $numberOfQuestions; $i++)
     //DEBUG:
 	//DEBUG:
     $query = "INSERT INTO survey_results VALUE ('{$_POST['ID']}', 'survey_1', $i, '{$_POST[$paramName]}');";
-    $query2 = "INSERT INTO student_info VALUE ('{$_POST['name']}', '{$_POST['nickname']}','{$_POST['ID']}');";
+    $query2 = "INSERT INTO student_info VALUE ('{$_POST['name']}', '{$_POST['nickname']}','{$_POST['ID']}',Null);";
     //DEBUG:
     // The mysqli way of querying the database.
+    
+	
 	if($stmt1 = $conn -> prepare($query))
 	{
 		$stmt1 -> execute();
@@ -49,8 +51,9 @@ for ($i = 0; $i <= $numberOfQuestions; $i++)
 	else
 	{
 	    //DEBUG:
-		echo "That didn't work out.";
+		echo "That didn't work out.(1)";
 	}
+	
 	if($stmt2 = $conn -> prepare($query2))
 	{
 		$stmt2 -> execute();
@@ -59,8 +62,9 @@ for ($i = 0; $i <= $numberOfQuestions; $i++)
 	else
 	{
 	    //DEBUG:
-		echo "That didn't work out.";
+		echo "That didn't work out.(2)";
 	}
+	
 }
 ?>
 
