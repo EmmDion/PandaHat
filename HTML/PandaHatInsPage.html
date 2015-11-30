@@ -31,11 +31,16 @@ what he would like the page to look like-->
 			
 			.button1{
 				margin-left: 800px;
+				float:left;
+				display:inline-block;
 
 			}
 			.button2{
-				margin-left:390px;
+				margin-left:975px;
+			
+				
 			}
+			
 			#startDate{
 				border: none;
 				background-color: transparent;
@@ -62,16 +67,18 @@ what he would like the page to look like-->
 			
 		</style>
 	</head>
-	<body>
+	<body onload="hide()">
 		<h2>Welcome </h2>
-		<div id="button1" class="button1">
-			<button onclick="changeDate()">Change Start/End Date</button>	
+		
+		<div>
+			<div id="button1" class="button1">
+				<button onclick="changeDate()">Change Start/End Date</button>	
+			</div>
+			
+			<div id="button2" class="button2">
+				<button onclick="submit()"> Submit </button>
+			</div>
 		</div>
-		<!--
-		<div id="button2" class="button2">
-			<button> Create New Survey </button>
-		</div>
-		-->
 		<div id="tables">
 			<div id="open">
 				<table border="1" cellpadding="10"> Open Surveys <br></br>
@@ -129,13 +136,10 @@ what he would like the page to look like-->
 		</div>
 		<script>
 		
-		var x = document.createElement("BUTTON");
-		x.id = 'submit';
-		var y = document.createTextNode("Submit");
-		x.appendChild(y);
-		document.body.appendChild(x)
-		
-		
+		function hide()
+		{
+			document.getElementById("button2").style.visibility='hidden';
+		}
 		function changeDate()
 		{
 		
@@ -144,8 +148,8 @@ what he would like the page to look like-->
 			document.getElementById("endDate1").disabled = false;
 			document.getElementById("startDate1").disabled = false;
 			
-			document.getElementById("submit").addEventListener("click", submit);
-			document.getElementById("submit").addEventListener("click", submit);
+			document.getElementById("button2").style.visibility='visible';
+			
 		}
 		function submit()
 		{
@@ -153,6 +157,8 @@ what he would like the page to look like-->
 			document.getElementById("startDate").disabled = true;
 			document.getElementById("endDate1").disabled = true;
 			document.getElementById("startDate1").disabled = true;
+			
+			document.getElementById("button2").style.visibility='hidden';
 			
 		}
 		</script>
