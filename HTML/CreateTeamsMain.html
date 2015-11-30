@@ -105,8 +105,8 @@
 				border-radius: 12px;
 			}
 			
-			#buttons{
-			
+			#edit{
+				display: inline!important;
 			}
 			*/
 		</style>
@@ -115,9 +115,15 @@
 	<body>
 		
 		<div id="buttons">
-			<button id="Edit"> Edit</button>
-			<button id="Import"> Import</button>
-			<button id="Export"> Export</button>
+			<form action="CreateTeamsEdit.html" style='float: left;'>
+				<button id="Edit"> Edit</button>
+			</form>
+			<form style='float:left; margin-left:4px'>
+				<button id="Import"> Import</button>
+			</form>
+			<form style='float:left; margin-left:4px'>
+				<button id="Export"> Export</button>
+			</form>
 		</div>
 		
 		<div id="Team0">
