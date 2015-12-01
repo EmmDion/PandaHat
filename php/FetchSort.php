@@ -10,13 +10,15 @@
 	// Defines $server, $user, $pass, $dbname, and $port.
 	include('connectionData.txt');
 
+
+    $return_value = json_decode('{"debug":null,"data":{"success":false,"student_ord_list":null} }');
 	$conn = mysqli_connect($server, $user, $pass, $dbname, $port)
 	or die('Error connecting to MySQL server.');
 
 
 
 	
-	class student(){
+	class student {
 		public $name;
 		public $student_id;
 		public $response;
@@ -88,9 +90,12 @@
 		}
 
 	$stmt->close();
+	
+    $return_value -> data ->success = true;
+	
+    $return_value -> data ->student_ord_list = $student_list;
 
-
-	echo json_encode($student_list);
+	echo json_encode($return_value);
 
 	mysqli_close($conn);
 
