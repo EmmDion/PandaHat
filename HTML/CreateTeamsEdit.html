@@ -3,10 +3,11 @@
 
 	<head>
 		<Title> Create Teams </Title>
+		<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 		<style type="text/css">
 			html{
 				background-image: url("http://www.dualimg.com/wp-content/wallpapers/20130103/uyx53yfhzsn448.jpg");
-	s		}
+			}
 			
 			#sort{
 			
@@ -172,7 +173,7 @@
 			<div id="buttons">
 				<button id="q4"> Average Grades </button>
 				<button id="q15"> Roles </button>
-				<button id="q19"> Java </button>
+				<button id="q19" onclick="sortScore(this.survey_tag, 'q19')"> Java </button>
 				<button id="q20"> C++ </button>
 				<button id="q21"> C </button>
 				<button id="q22"> Python </button>
@@ -197,11 +198,52 @@
 		</div>
 		
 		<div id="Responses">
-		
+			<script>
+			var survey_tag = "survey_1";
+			function sortScore(survey_tag, QuestionNum)
+			{
+				"use strict";
+				$.ajax({
+					url: 'php/fetch.php
+					type: 'get',
+					data" {
+						'survey_tag' :survey_1;
+						'selectmode': QuestionNum;
+					},
+					dataType: 'json',
+					success: function (json){
+						if(value === ){
+							$.each(json, function(i, item){
+								if(typeof item === 'object') {
+									$('#Responses').append($('<option/>'{
+										value:
+										text:
+									}));
+								}
+							});
+						
+						} else{
+							$.each(json, function(i,item){
+								if(typeof item === 'object'){
+									$('#Responses').append($('<option/>',{
+										value: 
+										text : 
+									}));
+								}
+							});
+						}
+					},
+					error: function (xhr, desc, err){
+						console.log(xhr);
+						console.log("Details: "+desc+"\nError; " + err);
+					}
+				});
+			}
 		</div>
 		
 		
 		
+		</script>
 		
 		
 	</body>
