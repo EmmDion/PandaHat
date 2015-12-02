@@ -27,8 +27,8 @@ function bake_with_debug($mutable_return_value, $debug_string)
 // Read GET parameters.
 // ------------------------------------------------------------------
 
-$survey_tag = (array_key_exists('survey_tag', $_GET)) ?  $_GET['survey_tag'] : 'dummy_survey_tag';
-$select_mode = (array_key_exists('selectmode', $_GET)) ? $_GET['selectmode'] : 'q100';  // Expecting string like "q32" or "q5".
+$survey_tag = (array_key_exists('survey_tag', $_GET)) ?  $_GET['survey_tag'] : 'no_survey_tag_provided';
+$select_mode = (array_key_exists('selectmode', $_GET)) ? $_GET['selectmode'] : 'q9001';  // Expecting string like "q32" or "q5".
 
 $question_num = (int) substr($select_mode, 1);
 
@@ -64,6 +64,7 @@ for ($i = 1; $i <= 15; $i++)
 // Return with success (must return JSON).
 // ------------------------------------------------------------------
 
+$return_value->debug = "survey_tag was $survey_tag, selectmode was $selectmode";
 $return_value->data->success = TRUE;
 $return_value->data->student_ord_list = $student_ans_list;
 echo json_encode($return_value);
