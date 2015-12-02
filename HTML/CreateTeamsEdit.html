@@ -163,8 +163,7 @@
 		
 		<div id="buttons">
 			<button id="Edit"> Edit</button>
-			<button id="Import"> Import</button>
-			<button id="Export"> Export</button>
+			
 		</div>
 		
 		<div id="sort">
@@ -198,15 +197,17 @@
 		
 		<div id="Responses">
 			<script>
+			
 			var survey_tag = "survey_1";
+			
 			function sortScore(survey_tag, QuestionNum)
 			{
 				"use strict";
 				$.ajax({
-					url: 'php/fetch.php'
+					url: 'php/FetchSort.php'
 					type: 'get',
-					data {
-						'survey_tag' :survey_1;
+					data: {
+						'survey_tag' : survey_tag;
 						'selectmode': QuestionNum;
 					},
 					dataType: 'json',
@@ -239,12 +240,9 @@
 				});
 			}
 			</script>
+			
 		</div>
-		
-		
-		
-		
-		
+			
 	</body>
 	
 </html>
