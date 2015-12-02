@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<!-- Performs a POST submission, given name of destination php file and data to be POSTed. -->
+
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+    <title> POST Portal</title>
+	    <!--
+	        See script at end of file.
+	    -->
+</head>
+
+<body bgcolor="white">
+
+<h3> Perform POST operations without modifying HTML code! </h3>
+
+<hr>
+
+<form>
+	<!-- Fill input from here to action of vessel_form below. -->
+	<input id="path_input" type="text" value=".php"> <br>
+    <input id="parameters" type="text" value="{&quot;param&quot;: 365}"> <br>
+
+	<!-- Rather than regular submit button, use intermediate to call JS, which invokes form submission. -->
+	<input id="submitter" type="button" value="submit">
+	<input type="reset" value="erase">
+</form>
+
+<form id="vessel_form" action="default.php" method="POST"></form>
+
+
+
+<!--##############################################################-->
+<script>
+
+// Function FillPhpPath: Grab user input, supply as form "action".
+function FillPhpPath()
+{
+	var e_pathInput = document.querySelector('#path_input');
+    var pathString = e_pathInput.value;
+
+    // Assume user enters a valid JSON string - use JSON.parse().
+    var e_parameters = document.querySelector('#parameters');
+    var parametersString = e_parameters.value;
+    var parameters = JSON.parse(parametersString);
+
+    var e_vesselForm = document.querySelector('#vessel_form');
+    PostForm(e_vesselForm, pathString, parameters);
+
+}
+
+// Function PostForm: Add params (must be 1-D keyed array) to form, set action path, and submit.
+    // Acknowledgement: Rakesh Pai on stackoverflow.com.
+function PostForm(form, path, params) {
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+         }
+    }
+
+    //DEBUG:
+    //alert(form.outerHTML);
+
+    form.submit();
+}
+
+
+// Document event-handling setup.
+var e_submitter = document.querySelector('#submitter');
+e_submitter.onclick = FillPhpPath;
+
+</script>
+<!--##############################################################-->
+
+</body>
+</html>
