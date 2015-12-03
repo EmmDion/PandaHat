@@ -35,7 +35,7 @@ if($stmt = $conn -> prepare($query)){
 
 	$stmt -> execute();
 	// Identifiers post-fixed with 'fetch' - otherwise wasn't sure if would cause clash.
-	$stmt -> bind_result($name_fetch, $ID_question_num, $result_fetch);
+	$stmt -> bind_result($name_fetch, $question_num_fetch, $result_fetch);
      
     // Currently data is output in HTML. Will change to JSON in future.
    
@@ -43,7 +43,7 @@ if($stmt = $conn -> prepare($query)){
     }
 	while($stmt -> fetch()){
 		
-		$question_result[] = {$name_fetch,$ID_question_num,$result_fetch};
+		$question_result[] = {$name_fetch,$question_num_fetch,$result_fetch};
 		$question_list[] = $question_result;
 		
 		}
