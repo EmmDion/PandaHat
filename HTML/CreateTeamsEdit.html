@@ -161,10 +161,6 @@
 	
 	<body>
 		
-		<div id="buttons">
-			<button id="Edit"> Edit</button>
-			
-		</div>
 		
 		<div id="sort">
 		
@@ -196,40 +192,40 @@
 		</div>
 		
 		<div id="Responses">
-			<script>
+			<script src="jquery-2.1.4.min.js">
 			
 			var survey_tag = "survey_1";
 			
 			function sortScore(survey_tag, QuestionNum)
 			{
-					//temporary for testing
-				var _survey_tag = "survey_1";
-				var _QuestionNum = "20";
 				
 				$.ajax({
-					dataType: "json",
 					url: '../php/FetchSort.php',
+                    type: 'get',
 					data: {
-						'survey_tag': _survey_tag,
-						"selectmode": _QuestionNum
+						'survey_tag' : 'survey_1',
+						'selectmode' : '19'           //need to find a way to make this not hard coded. Would like to use this function for all of the above buttons. don't want to copy and paste and change value for each button.
 					},
+                    dataType: 'json',
 					success: function(json) {
 						alert('success');
-						$.each(json, function(i, item) {
-							if(typeof item === 'object') {
-								$('#Responses').append($('<option/>', {
-									value: "test",
-									text: "test2"
-								}));
-
-
-							}
-						});
+						
+						// need to figure out how to get this in 2 column table format ( Student    Response)
+						
+						//$.each(json, function(i, value){     *go through each item in array
+							//if(typeof item === 'object'){    *if it is an object
+								//$('#Responses').append($(</>, {           * append it to the Responses div (one we are currently in (not sure if "</>" is necessary or what goes there
+									//value: value.id
+									//text: value.name + " " + value.response      *what should show up on the page
+								//}));
+							//}
+						//}
 					},
 					error: function() {
 						alert("error");
 					}
 				});
+			
 			}
 			</script>
 			
