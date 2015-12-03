@@ -20,8 +20,8 @@ $question_result = array();
 $question_list = array();
 $student_list = array();
 
-$survey_tag = $_POST['survey_tag'];
-$student_id = $_POST['student_id'];
+$survey_tag = $_GET'survey_tag'];
+//$student_id = $_POST['student_id'];  //unnecessary
 
 // Fetch survey results for one survey and one student. Also, list in sorted order.
 
