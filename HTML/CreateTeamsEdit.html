@@ -171,7 +171,7 @@
 			<div id="buttons">
 				<button id="q4"> Average Grades </button>
 				<button id="q15"> Roles </button>
-				<button id="q19" onclick="sortScores(this.survey_tag, 'q19')"> Java </button>
+				<button id="q19" onclick="sortScores('survey_1', 'q19')"> Java </button>
 				<button id="q20"> C++ </button>
 				<button id="q21"> C </button>
 				<button id="q22"> Python </button>
@@ -202,40 +202,32 @@
 			
 			function sortScore(survey_tag, QuestionNum)
 			{
-				"use strict";
+					//temporary for testing
+				var _survey_tag = "survey_1";
+				var _QuestionNum = "20";
+				
 				$.ajax({
-					url: 'php/FetchSort.php'
-					type: 'get',
+					dataType: "json",
+					url: '../php/FetchSort.php',
 					data: {
-						'survey_tag' : survey_tag;
-						'selectmode': QuestionNum;
+						'survey_tag': _survey_tag,
+						"selectmode": _QuestionNum
 					},
-					dataType: 'json',
-					success: function (json){
-						if(value === ){
-							$.each(json, function(i, item){
-								if(typeof item === 'object') {
-									$('#Responses').append($('<option/>'{
-										value:
-										text:
-									}));
-								}
-							});
-						
-						} else{
-							$.each(json, function(i,item){
-								if(typeof item === 'object'){
-									$('#Responses').append($('<option/>',{
-										value: 
-										text : 
-									}));
-								}
-							});
-						}
+					success: function(json) {
+						alert('success');
+						$.each(json, function(i, item) {
+							if(typeof item === 'object') {
+								$('#Responses').append($('<option/>', {
+									value: "test",
+									text: "test2"
+								}));
+
+
+							}
+						});
 					},
-					error: function (xhr, desc, err){
-						console.log(xhr);
-						console.log("Details: "+desc+"\nError; " + err);
+					error: function() {
+						alert("error");
 					}
 				});
 			}
