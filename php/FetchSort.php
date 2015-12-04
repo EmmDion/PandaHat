@@ -1,105 +1,72 @@
 <?php
 
-	// Project:   PandaHat > Iter1 backend php > Fetch.php
-	// Authors:   Panda_S (Panda_X), and Panda_M
-	// Created:   2015-11-12
-	// Modified:  2015-11-21
-
-	// See note in 'Give.php' about the use of mysqli.
-
-	// Defines $server, $user, $pass, $dbname, and $port.
-	include('connectionData.txt');
+// ==================================================================
+// Project:   PandaHat > Iter3 backend php > FetchSort.php (Stub)
+// Authors:   Panda_M
+// Created:   2015-12-01
+// Modified:  2015-12-01
+// ==================================================================
 
 
-    $return_value = json_decode('{"debug":null,"data":{"success":false,"student_ord_list":null} }');
-	$conn = mysqli_connect($server, $user, $pass, $dbname, $port)
-	or die('Error connecting to MySQL server.');
+// ------------------------------------------------------------------
+// Initialize return value to the failure message state.
+// ------------------------------------------------------------------
+
+$return_value = json_decode('{"debug": null, "data": {"success": false, "student_ord_list": null} }');
+
+// Usage: die(bake_with_debug($return_value, 'Info about error...'));
+function bake_with_debug($mutable_return_value, $debug_string)
+{
+    $mutable_return_value->debug = $debug_string;
+    return json_encode($mutable_return_value);
+}
 
 
 
-	
-	class student {
-		public $name;
-		public $student_id;
-		public $response;
-		function __construct($name,$id,$result){
-			$this -> name = $name;
-			$this -> student_id = $id;
-			$this -> response = $result;
-			
-		}
+// ------------------------------------------------------------------
+// Read GET parameters.
+// ------------------------------------------------------------------
+
+$survey_tag = (array_key_exists('survey_tag', $_GET)) ?  $_GET['survey_tag'] : 'no_survey_tag_provided';
+$select_mode = (array_key_exists('selectmode', $_GET)) ? $_GET['selectmode'] : 'q9001';  // Expecting string like "q32" or "q5".
+
+$question_num = (int) substr($select_mode, 1);
+
+
+// ------------------------------------------------------------------
+// Dummy return data.
+// ------------------------------------------------------------------
+
+class StudentAns
+{
+	public $student_id;
+	public $name;
+	public $response;
+
+	public function __construct($new_student_id, $new_name, $new_response)
+	{
+		$this->student_id = $new_student_id;
+        $this->name = $new_name;
+        $this->response = $new_response;
 	}
+}
+
+$student_ans_list = array();
+for ($i = 1; $i <= 15; $i++)
+{
+	$score = ($i % 5) + 1;
+	$new_student_ans = new StudentAns(950000000 + $i, "firstname$i creativeguy", $score);
+	$student_ans_list[] = $new_student_ans;
+}
 
 
+// ------------------------------------------------------------------
+// Return with success (must return JSON).
+// ------------------------------------------------------------------
 
-	$name = "";	
-	//$ID = 0;
-	$student_list = array();
-	$survey_tag = $_POST['survey_tag'];
-	$student_id = $_POST['student_id'];
-	//$question_num = $_POST['question_num'];
-	$selectmode = $_POST['selectmode'];
-	$question_map = array("All" =>"*", 
-						  "Java"=>"19",
-						  "C++" => "20",
-						  "C" => "21",
-						  "Python" => "22",
-						  "Android" => "23",
-						  "Web_design" => "24",
-						  "Web_programing" =>"25"
-						 );
+$return_value->debug = "survey_tag was $survey_tag, selectmode was $select_mode";
+$return_value->data->success = TRUE;
+$return_value->data->student_ord_list = $student_ans_list;
+echo json_encode($return_value);
 
-	// Fetch survey results for one survey and one student. Also, list in sorted order.
-
-	//TODO: rename quiz_tag to survey_tag
-
-
-	switch($selectmode){
-	     case "All":
-	        $query = "SELECT stu.name, s.question_num, s.result FROM survey_results s join student_info stu using (student_id)WHERE survey_tag  = '$survey_tag' AND student_id = '$student_id' ORDER BY question_num";
-	        break;
-	     default:
-	    	$query = "SELECT stu.name, stu.student_id, s.result FROM survey_results s join student_info stu using (student_id)WHERE survey_tag  = '$survey_tag' AND question_num=".$question_map[$selectmode];
-	        $query = $query."ORDER BY result";
-	    	break;
-	}
-
-
-	// The mysqli way of querying the database.
-	if($stmt = $conn -> prepare($query)){
-
-
-		$stmt -> execute();
-		// Identifiers post-fixed with 'fetch' - otherwise wasn't sure if would cause clash.
-		$stmt -> bind_result($name_fetch, $ID_fetch, $result_fetch);
-	     
-	    // Currently data is output in HTML. Will change to JSON in future.
-	   
-	    
-	    }
-
-
-		while($stmt -> fetch()){
-			/*echo "\n";
-			echo "<tr><td>$name_fetch</td>
-					  <td>$ID_fetch</td>
-			          <td>$result_fetch</td><tr>";*/
-			$student = new student($name_fetch,$ID_fetch,$result_fetch);
-			$student_list[] = $student;
-			
-		}
-
-	$stmt->close();
-	
-    
-    $return_value -> data ->success = true;
-	
-    $return_value -> data ->student_ord_list = $student_list;
-
-	echo json_encode($return_value);
-
-	mysqli_close($conn);
-
-	?>
-
-		  
+?>

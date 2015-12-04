@@ -5,7 +5,7 @@ what he would like the page to look like-->
 
 	<head>
 		<Title> Instructor Site </Title>
-		<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+		
 		<style type="text/css">
 			
 			html{
@@ -18,81 +18,134 @@ what he would like the page to look like-->
 			}
 			
 			#tables{
-				/*background-color: #63A13C; */
+				
 				padding-top: 50px;
 				padding-bottom: 50px;
 				padding-left: 50px;
+				
 				width: 575px;
 				height: 350px;
-				border-radius: 10px;
+			
+				
+				
 				margin-left: auto;
 				margin-right: auto;
+				
+				font-size: 36px;
+				font-family: "Tahoma", Geneva, sans-serif;
+				text-align: center;
 			}
-			
-			.button1{
-				margin-left: 800px;
-				float:left;
-				display:inline-block;
+			.CSSTableGenerator {
+				margin:0px;padding:0px;
+				width:100%;
+				border:1px solid #000000;
+				
+				-moz-border-radius-bottomleft:17px;
+				-webkit-border-bottom-left-radius:17px;
+				border-bottom-left-radius:17px;
+				
+				-moz-border-radius-bottomright:17px;
+				-webkit-border-bottom-right-radius:17px;
+				border-bottom-right-radius:17px;
+				
+				-moz-border-radius-topright:17px;
+				-webkit-border-top-right-radius:17px;
+				border-top-right-radius:17px;
+				
+				-moz-border-radius-topleft:17px;
+				-webkit-border-top-left-radius:17px;
+				border-top-left-radius:17px;
+			}.CSSTableGenerator table{
+				border-collapse: collapse;
+					border-spacing: 0;
+				width:100%;
+				height:100%;
+				margin:0px;padding:0px;
+			}.CSSTableGenerator tr:last-child td:last-child {
+				-moz-border-radius-bottomright:17px;
+				-webkit-border-bottom-right-radius:17px;
+				border-bottom-right-radius:17px;
+			}
+			.CSSTableGenerator table tr:first-child td:first-child {
+				-moz-border-radius-topleft:17px;
+				-webkit-border-top-left-radius:17px;
+				border-top-left-radius:17px;
+			}
+			.CSSTableGenerator table tr:first-child td:last-child {
+				-moz-border-radius-topright:17px;
+				-webkit-border-top-right-radius:17px;
+				border-top-right-radius:17px;
+			}.CSSTableGenerator tr:last-child td:first-child{
+				-moz-border-radius-bottomleft:17px;
+				-webkit-border-bottom-left-radius:17px;
+				border-bottom-left-radius:17px;
+			}.CSSTableGenerator tr:hover td{
+				
+			}
+			.CSSTableGenerator tr:nth-child(odd){ background-color:#007f00; }
+			.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
+				vertical-align:middle;
+				
+				
+				border:1px solid #000000;
+				border-width:0px 1px 1px 0px;
+				text-align:center;
+				padding:14px;
+				font-size:36px;
+				font-family:Arial;
+				font-weight:normal;
+				color:#000000;
+			}.CSSTableGenerator tr:last-child td{
+				border-width:0px 1px 0px 0px;
+			}.CSSTableGenerator tr td:last-child{
+				border-width:0px 0px 1px 0px;
+			}.CSSTableGenerator tr:last-child td:last-child{
+				border-width:0px 0px 0px 0px;
+			}
+			.CSSTableGenerator tr:first-child td{
+					background:-o-linear-gradient(bottom, #249324 5%, #007f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #249324), color-stop(1, #007f00) );
+				background:-moz-linear-gradient( center top, #249324 5%, #007f00 100% );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#249324", endColorstr="#007f00");	background: -o-linear-gradient(top,#249324,007f00);
 
+				background-color:#249324;
+				border:0px solid #000000;
+				text-align:center;
+				border-width:0px 0px 1px 1px;
+				font-size:14px;
+				font-family:Arial;
+				font-weight:bold;
+				color:#ffffff;
 			}
-			.button2{
-				margin-left:975px;
-			
-				
+			.CSSTableGenerator tr:first-child:hover td{
+				background:-o-linear-gradient(bottom, #249324 5%, #007f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #249324), color-stop(1, #007f00) );
+				background:-moz-linear-gradient( center top, #249324 5%, #007f00 100% );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#249324", endColorstr="#007f00");	background: -o-linear-gradient(top,#249324,007f00);
+
+				background-color:#249324;
 			}
-			
-			#startDate{
-				border: none;
-				background-color: transparent;
-				
+			.CSSTableGenerator tr:first-child td:first-child{
+				border-width:0px 0px 1px 0px;
 			}
-			#endDate{
-				border: none;
-				background-color: transparent;
-				
+			.CSSTableGenerator tr:first-child td:last-child{
+				border-width:0px 0px 1px 1px;
 			}
-			#startDate1{
-				border: none;
-				background-color: transparent;
-			}
-			#endDate1{
-				border: none;
-				background-color: transparent;
-			}
-			input[disabled]{
-				color: black;
-			}
-			
 			
 			
 		</style>
 	</head>
-	<body onload="hide()">
+	<body>
 		<h2>Welcome </h2>
 		
-		<div>
-			<div id="button1" class="button1">
-				<button onclick="changeDate()">Change Start/End Date</button>	
-			</div>
-			
-			<div id="button2" class="button2">
-				<button onclick="submit()"> Submit </button>
-			</div>
-		</div>
 		<div id="tables">
-			<div id="open">
-				<table border="1" cellpadding="10"> Open Surveys <br></br>
+			<div>
+				<table border="1" cellpadding="10" class="CSSTableGenerator"> Surveys <br></br>
 					<tr> 
 						<td> Survey ID </td>
-						<td> Start Date </td>
-						<td> End Date</td>
 						<td> # of Submissions </td>
 						<td> </td>
 					</tr>
 					<tr>
 						<td>CIS 422</td>
-						<td><input id="startDate"disabled size="7" type="date"></td>
-						<td><input id="endDate" disabled size="7" type="date"></td>
 						<td>22</td>
 						<td> <a href="CreateTeamsMain.html">Create Teams</a> </td>
 					</tr>
@@ -100,67 +153,17 @@ what he would like the page to look like-->
 						<td></td>
 						<td></td>
 						<td></td>
-						<td></td>
-						<td> <a href="CreateTeamsMain.html"> Create Teams </a> </td>
 					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					
 				</table>	
 			</div>
-			<br></br>
-			<br></br>
 			
-			<div id="closed">
-				<table border="1" cellpadding="10"> Closed Surveys <br></br>
-					<tr>
-						<td> Survey ID </td>
-						<td> Start Date </td>
-						<td> End Date</td>
-						<td> # of Submissions </td>
-						<td>  </td>
-					</tr>
-					<tr>
-						<td>CIS 522</td>
-						<td><input id="startDate1" disabled size="7" type="date"></td>
-						<td><input id="endDate1" disabled size="7" type="date"></td>
-						<td>35</td>
-						<td> <a href = "CreateTeamsMain.html">Create Teams </a></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td> <a href="CreateTeamsMain.html"> Create Teams </a></td>
-					</tr>
-				</table>
-			</div>
 		</div>
-		<script>
 		
-		function hide()
-		{
-			document.getElementById("button2").style.visibility='hidden';
-		}
-		function changeDate()
-		{
-		
-			document.getElementById("endDate").disabled = false;
-			document.getElementById("startDate").disabled = false;
-			document.getElementById("endDate1").disabled = false;
-			document.getElementById("startDate1").disabled = false;
-			
-			document.getElementById("button2").style.visibility='visible';
-			
-		}
-		function submit()
-		{
-			document.getElementById("endDate").disabled = true;
-			document.getElementById("startDate").disabled = true;
-			document.getElementById("endDate1").disabled = true;
-			document.getElementById("startDate1").disabled = true;
-			
-			document.getElementById("button2").style.visibility='hidden';
-			
-		}
-		</script>
 	</body>
 </html>
