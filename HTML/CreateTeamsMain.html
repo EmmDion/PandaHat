@@ -7,13 +7,44 @@
 			html{
 				background-image: url("http://www.dualimg.com/wp-content/wallpapers/20130103/uyx53yfhzsn448.jpg");
 			}
-			
 		</style>
 	</head>
 	
-	<body>
+	<body onload="showTeams()">
 		
+		<div id="teams">
 		
+		</div>
+		
+		<script src="jquery-2.1.4">
+		
+		function showTeams()
+		{
+			$.ajax({
+					url: '../php/',
+                    type: 'get',
+					data: {
+						
+					},
+                    dataType: 'json',
+					success: function(json) {
+						alert('success');
+						
+						//$.each(json, function(i, value){     
+							//if(typeof item === 'object'){    
+								//$('#teams').append($('<div/>', {         
+									//value: value.id
+									//text: value.name 
+								//}));
+							//}
+						//}
+					},
+					error: function() {
+						alert("error");
+					}
+				});
+		}
+		</script>
 		
 		
 	</body>
